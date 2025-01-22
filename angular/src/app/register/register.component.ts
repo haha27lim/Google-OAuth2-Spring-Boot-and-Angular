@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { GoogleAuthService } from '../_services/google-auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-  private readonly clientId = '${import.meta.env.VITE_GOOGLE_CLIENTID}';
+  private readonly clientId = environment.googleClientId;
 
   constructor(
     private authService: AuthService,

@@ -3,6 +3,7 @@ import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
 import { GoogleAuthService } from '../_services/google-auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  private readonly clientId = '${import.meta.env.VITE_GOOGLE_CLIENTID}';
+  private readonly clientId = environment.googleClientId;
 
   constructor(
     private authService: AuthService,
